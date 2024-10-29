@@ -31,6 +31,11 @@ const handler = async (req, res) => {
         const products = outputData.data.map(product => ({
           ProductID: product.ID,
           name: product.Product_Name,
+          variety : product.Window_Type,
+          model : product.Installation_Operation,
+          type : product.Best_Performance, 
+          Product_Type : product.Product_Type,
+          Product_Description : product.Product_Description,
           images: product.Product_Images.map(img => img.display_value),
         }));
         res.json(products);
